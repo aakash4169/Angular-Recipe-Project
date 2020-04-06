@@ -15,5 +15,7 @@ new Ingredient('Tomatoes',10)
 
   ngOnInit() {
   }
-
+  onIngredientAdded(ingredient:Ingredient){
+    this.ingredients.push(ingredient);
+  }
 }
