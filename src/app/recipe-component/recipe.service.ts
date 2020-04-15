@@ -26,6 +26,10 @@ constructor(private slList:ShoppingListService){
           return this.recipes.slice();
       }
 
+      getRecipesbyId(id:number){
+        return this.recipes[id];
+    }
+
       addToShoppingList(ingredients:Ingredient[]){
         this.slList.addToShoppingList(ingredients)
       }
