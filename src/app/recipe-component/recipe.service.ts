@@ -12,7 +12,7 @@ constructor(private slList:ShoppingListService){
 }
 
 recipesChanged=new Subject<Recipe[]>()
-   private recipes:Recipe[]=[
+  /* private recipes:Recipe[]=[
 
         new Recipe("Tasty Schnitzel","Super Tasty",'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/9/26/0/FNK_Tuscan-Chicken-Skillet_H2_s4x3.jpg.rend.hgtvcom.826.620.suffix/1537973085542.jpeg',[
             new Ingredient('Meat',1),
@@ -23,9 +23,11 @@ recipesChanged=new Subject<Recipe[]>()
             new Ingredient('Meat',20)
         ])
       ];
-
+*/
+private recipes:Recipe[]=[]
 
       getRecipes(){
+        console.log(this.recipes)
           return this.recipes.slice();
       }
 
@@ -49,6 +51,11 @@ recipesChanged=new Subject<Recipe[]>()
 
       deleteRecipe(index:number){
         this.recipes.splice(index,1)
+        this.recipesChanged.next(this.recipes.slice())
+      }
+
+      setRecipes(recipe:Recipe[]){
+        this.recipes=recipe
         this.recipesChanged.next(this.recipes.slice())
       }
       
