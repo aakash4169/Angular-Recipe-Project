@@ -3,11 +3,16 @@ import { RecipeComponentComponent } from './recipe-component.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.component';
-import { RecipeStartComponent } from '../recipes/recipe-start/recipe-start.component';
+
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecipesRoutingModule } from './recipes-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { RecipeStartComponent } from './recipe-start/recipe-start.component';
+
+
 
 
 @NgModule({
@@ -16,23 +21,19 @@ import { FormsModule } from '@angular/forms';
     RecipeListComponent,
     RecipeDetailComponent,
     RecipeItemComponent,
-    RecipeStartComponent,
     RecipeEditComponent,
+    RecipeStartComponent
+   
+    
     ],
     imports:[
         RouterModule,
-        CommonModule,
-        FormsModule
+       SharedModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RecipesRoutingModule
     ]
-    ,
-    exports:[
-        RecipeComponentComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    ]
+    
 })
 
 

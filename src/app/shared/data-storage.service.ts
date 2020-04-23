@@ -23,6 +23,7 @@ export class DataStorageService{
         }
 
         fetchRecipes(){
+            console.log("in fetch")
            
                 return this.http.get<Recipe[]>('https://ng-recipe-book-b51d9.firebaseio.com/recipes.json',
                 )
